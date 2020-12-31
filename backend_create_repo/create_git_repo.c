@@ -10,6 +10,7 @@
 
 #define MAX_PATH 255
 
+// your filesystem path here
 const char *git_root = "/git";
 
 static void create_initial_commit(git_repository *repo) {
@@ -18,7 +19,7 @@ static void create_initial_commit(git_repository *repo) {
   git_oid tree_id, commit_id;
   git_tree *tree;
   
-  if (git_signature_now(&sig, "Zulu7 Git", "git@zulu7.com") < 0) {
+  if (git_signature_now(&sig, "Git Infrastructure", "git@domain.example") < 0) {
     fprintf(stderr, "Unable to create a commit signature.\n"
                     "Perhaps 'user.name' and 'user.email' are not set\n");
     exit(1);
